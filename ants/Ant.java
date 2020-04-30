@@ -1,4 +1,4 @@
-import greenfoot.*;
+    import greenfoot.*;
 
 /**
  * An ant that collects food.
@@ -22,18 +22,19 @@ public class Ant extends Creature
     public void act()
     {
         testFoodPile(); // This currently does not do anything
+        randomWalk();
     }
-    
+ 
     private void testFoodPile()
     {
     
-    /*****************************************************************
-        Food food = (Food) getOneIntersectingObject(Food.class);
+    
+        Food1 food = (Food1) getOneIntersectingObject(Food1.class);
         if (food != null) 
         {
             food.removeCrumb();
         }
-    *****************************************************************/
+    
     
     }
 }
