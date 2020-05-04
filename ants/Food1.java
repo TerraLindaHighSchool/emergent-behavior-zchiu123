@@ -18,20 +18,12 @@ public class Food1 extends Actor
     public Food1()
     {
         image = new GreenfootImage(SIZE, SIZE);
-    }
-    /**
-     * Act - do whatever the Food wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-       
-        // Add your action code here.
-    }    
+        updateImage();
+    }  
     private void updateImage()
     {
         Random random = new Random();
-        for (int i = 0; i<=5; i++)
+        for (int i = 0; i < crumbs; i++)
         {
            int stDev = SIZE / 6;
            int x = (int) (stDev * random.nextGaussian( ) + 3 * stDev);
@@ -69,9 +61,10 @@ public class Food1 extends Actor
         updateImage();
         crumbs--;
         
-    }
+    }   
     if (crumbs == 0)
     {
+        getWorld().removeObject(this);
         image.clear();
     }
 } 
