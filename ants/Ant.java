@@ -63,6 +63,7 @@ public class Ant extends Creature
         if(carryingFood == true)
         {
             walkTowardsHome();
+            handlePhermoneDrop();
             if(atHome())
             {
                 setImage(image1);
@@ -78,9 +79,7 @@ public class Ant extends Creature
     private void handlePhermoneDrop()
     {
     }
-    private boolean smellsPhermone()
-    {
-    }
+   
     private void walkTowardsPhermoneCenter()
     {
     }
