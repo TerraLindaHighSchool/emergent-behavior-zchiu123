@@ -75,5 +75,14 @@ public class Ant extends Creature
             searchForFood();
         }
     }
+    private void handlePhermoneDrop()
+    {
+    }
+    private boolean smellsPhermone()
+    {
+    }
+    private void walkTowardsPhermoneCenter()
+    {
+    }
 
 }
