@@ -103,7 +103,15 @@ public class Ant extends Creature
         }
     }
      private boolean smellsPheromone()
-    {
+    { 
+        if(isTouching(Pheromone.class))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     private void walkTowardsPheromoneCenter()
     {
