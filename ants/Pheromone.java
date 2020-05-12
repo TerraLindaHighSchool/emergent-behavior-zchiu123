@@ -6,12 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Zachary Chiu
  * @version (a version number or a date)
  */
-public class Phernome extends Actor
+public class Pheromone extends Actor
 {
     private GreenfootImage image;
     private static final int MAX_INTENSITY = 180;
     private int intensity;    
-    public Phernome()
+    public Pheromone()
     {
         intensity = MAX_INTENSITY;
     }
