@@ -14,7 +14,7 @@ public class Ant extends Creature
     private final int MAX_PH_AVAILABLE = 16;
     private final int TIME_FOLLOWING_TRAIL = 30;
     private int phAvailable;
-    private int followTrialTimeRemaining;
+    private int followTrailTimeRemaining;
     /** Create an ant with a given home hill. The initial speed is zero (not moving).
      **/
     public Ant(AntHill home)
@@ -55,6 +55,19 @@ public class Ant extends Creature
     }
     private void searchForFood()
     {
+        if(followTrailTimeRemaining == 0)
+        {
+            if(smellsPheromone())
+            {
+                walkTowardsPheromoneCenter();
+            }
+            randomWalk();
+        }
+        else
+        {
+            followTrailTimeRemaining--;
+            walkAwayFromHome();
+        }
         randomWalk();
         checkForFood();
     }
@@ -63,7 +76,7 @@ public class Ant extends Creature
         if(carryingFood == true)
         {
             walkTowardsHome();
-            handlePhermoneDrop();
+            handlePheromoneDrop();
             if(atHome())
             {
                 setImage(image1);
@@ -76,11 +89,13 @@ public class Ant extends Creature
             searchForFood();
         }
     }
-    private void handlePhermoneDrop()
+    private void handlePheromoneDrop()
     {
     }
-   
-    private void walkTowardsPhermoneCenter()
+     private boolean smellsPheromone()
+    {
+    }
+    private void walkTowardsPheromoneCenter()
     {
     }
 
